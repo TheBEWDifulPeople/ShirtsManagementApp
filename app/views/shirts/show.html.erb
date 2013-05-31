@@ -2,5 +2,7 @@
 <p><%= @shirt.description %></p>
 <%= image_tag @shirt.image %>
 <%= @shirt.vendor.name %>
-
+Tags: <%= format_tag_list @shirt.tag_list %>
+<p>
 <%= link_to "Edit", edit_shirt_path(@shirt) %>
+</p>

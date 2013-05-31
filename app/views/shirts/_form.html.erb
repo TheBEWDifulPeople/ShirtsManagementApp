@@ -14,6 +14,8 @@
 <%= f.text_field :description %>
 <%= f.label :image %>
 <%= f.text_field :image %>
+<%= f.label :tag_list %>
+<%= f.text_field :tag_list, value:  format_tag_list(@shirt.tag_list) %>
 <%= f.collection_select :vendor_id, @vendors, :id, :name %>
 <%= f.submit %>
 <% end %>

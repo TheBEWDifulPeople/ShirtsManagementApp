@@ -15,11 +15,13 @@ class ShirtsController < ApplicationController
     if @shirt.save
       redirect_to @shirt
     else
+      @vendors = Vendor.all
       render 'new'
     end
   end
 
   def edit
+    @vendors = Vendor.all
   end
 
   def update
@@ -41,7 +43,7 @@ class ShirtsController < ApplicationController
   private
 
   def shirt_params
-    params.require('shirt').permit(:name, :description, :image, :vendor_id)
+    params.require('shirt').permit(:name, :description, :image, :vendor_id, :tag_list)
   end
 
   def set_shirt

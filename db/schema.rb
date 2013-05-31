@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130529003919) do
+ActiveRecord::Schema.define(version: 20130531003217) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "shirts", force: true do |t|
     t.string   "name"
@@ -23,6 +29,16 @@ ActiveRecord::Schema.define(version: 20130529003919) do
   end
 
   add_index "shirts", ["vendor_id"], name: "index_shirts_on_vendor_id"
+
+  create_table "tags", force: true do |t|
+    t.integer  "category_id"
+    t.integer  "shirt_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tags", ["category_id"], name: "index_tags_on_category_id"
+  add_index "tags", ["shirt_id"], name: "index_tags_on_shirt_id"
 
   create_table "vendors", force: true do |t|
     t.string   "name"

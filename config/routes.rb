@@ -1,4 +1,6 @@
 ShirtManagementApp::Application.routes.draw do
+  resources :categories
+
   resources :vendors
 
   root "shirts#index"

@@ -2,4 +2,5 @@
 <h2>Shirts on the site include:</h2>
 <% @shirts.each do |shirt| %>
  <%= shirt.name %>
+ Tags: <%= shirt.tag_list %>
 <% end %>
