@@ -1,3 +1,4 @@
+vendor = Vendor.create name: "Woot!", website: "http://shirt.woot.com"
 Shirt.create name: "Rushed to Market", description: "Meta Shirt showing Warning about inability to load shirt", image: "rushed_to_market.png"
 Shirt.create name: "Darwin's Delight", description: "Darwin with paper cutouts of evolution", image: "darwins_delight.png"
 Shirt.create name: "Victory through Chaos", description: "Button Masher's Manifesto", image: "victory_through_chaos.png"
@@ -18,3 +19,5 @@ Shirt.create name: "Winners at Life", description: "Phoenix, Cat, and Zombie at 
 Shirt.create name: "Halfling Height Requirement", description: "Gandalf as a queue manager", image: "halfing_height_requirement.png"
 Shirt.create name: "The Last One", description: "Sad Polar Bear is sad", image: "the_last_one.png"
 Shirt.create name: "Panda Pirate", description: "Panda as a Pirate", image: "panda_pirate.png"
+
+Shirt.update_all vendor_id: vendor
