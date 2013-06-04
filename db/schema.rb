@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130604014032) do
+ActiveRecord::Schema.define(version: 20130604041824) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "possessions", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "shirt_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "possessions", ["shirt_id"], name: "index_possessions_on_shirt_id"
+  add_index "possessions", ["user_id"], name: "index_possessions_on_user_id"
 
   create_table "shirts", force: true do |t|
     t.string   "name"

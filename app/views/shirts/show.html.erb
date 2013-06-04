@@ -6,3 +6,4 @@ Tags: <%= format_tag_list @shirt.tag_list %>
 <p>
 <%= link_to "Edit", edit_shirt_path(@shirt) %>
 </p>
+<p><%= link_to "Add to my Collection", possessions_path(shirt_id: @shirt), method: :post %></p>

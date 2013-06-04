@@ -5,6 +5,10 @@ class Shirt < ActiveRecord::Base
 
   has_many :tags, dependent: :destroy
   has_many :categories, through: :tags
+
+  has_many :possessions
+  has_many :users, through: :possessions
+
   belongs_to :vendor
 
   def self.search_for(query)
