@@ -1,0 +1,8 @@
+<h1>My Profile</h1>
+<p>You have <%= pluralize(current_user.shirts.count, "shirt" ) %> in the system</p>
+
+<ol>
+<% current_user.shirts.each do |shirt| %>
+<li><%= shirt.name %></li>
+<% end %>
+</ol>

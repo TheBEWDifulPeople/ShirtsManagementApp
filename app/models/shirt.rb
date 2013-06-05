@@ -6,6 +6,9 @@ class Shirt < ActiveRecord::Base
   has_many :categories, through: :tags
   belongs_to :vendor
 
+  has_many :closets
+  has_many :users, through: :closets
+
   def self.search_for(query)
     where('name LIKE ? OR description LIKE ?', "%#{query}%", "%#{query}%")
   end
