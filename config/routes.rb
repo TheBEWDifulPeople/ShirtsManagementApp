@@ -9,4 +9,5 @@ ShirtManagementApp::Application.routes.draw do
 
   get "/search", to: "shirts#search"
   get "profile", to: "profile#index"
+  post "hanger", to: "hanger#create"
 end
