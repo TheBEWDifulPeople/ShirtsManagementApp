@@ -1,5 +1,5 @@
 class Shirt < ActiveRecord::Base
-  validates :name, :description, :image, presence: true
+  validates :name, :description, presence: true
   validates :description, length: { minimum: 10 }
   has_many :tags
   has_many :categories, through: :tags
@@ -29,10 +29,3 @@ class Shirt < ActiveRecord::Base
   end
 
 end
-
-
-
-
-
-
-

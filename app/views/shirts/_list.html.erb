@@ -3,8 +3,10 @@
     <article class="span3">
       <header><%= shirt.name %></header>
       <p><%= truncate shirt.description, separator: " " %></p>
-      <%= image_tag shirt.image_url %>
-      <%= link_to "Show", shirt %>
+      <%= image_tag shirt.image_url(:thumb) %>
+      <div>
+        <%= link_to "Show", shirt %>
+      </div>
     </article>
   <% end %>
 </section>
