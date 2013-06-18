@@ -30,11 +30,7 @@ class ShirtsController < ApplicationController
   end
 
   def search
-    query = params[:q]
-    # Shirt.where('name LIKE %query%')
-    # @shirts = Shirt.where('name LIKE ?', "%#{query}%")
-    @shirts = Shirt.search_for(query)
-    # @shirts = Shirt.where(name: query)
+    @shirts = Shirt.search_for(params[:q])
   end
 
   def show
@@ -43,7 +39,7 @@ class ShirtsController < ApplicationController
   private
 
   def shirt_params
-    params.require('shirt').permit(:name, :description, :image, :vendor_id, :tag_list)
+    params.require('shirt').permit(:name, :description, :image, :vendor_id, :tag_list, :remote_image_url)
   end
 
   def set_shirt
