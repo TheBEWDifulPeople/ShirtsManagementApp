@@ -1,16 +1,9 @@
 class CategoriesController < ApplicationController
   def index
-  end
-
-  def new
-
-  end
-
-  def create
-
+    @categories = Category.all
   end
 
   def show
-
+    @category = Category.includes(:shirts).find(params[:id])
   end
 end

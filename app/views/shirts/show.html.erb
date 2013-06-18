@@ -1,8 +1,15 @@
 <h1><%= @shirt.name %></h1>
-<p><%= @shirt.description %></p>
+<h2><%= @shirt.description %></h2>
 <%= image_tag @shirt.image %>
-<%= @shirt.vendor.name %>
+<p>
+Vendor: <%= link_to @shirt.vendor.name, @shirt.vendor %>
+</p>
+<p>
 Tags: <%= format_tag_list @shirt.tag_list %>
+</p>
 <p>
 <%= link_to "Edit", edit_shirt_path(@shirt) %>
+</p>
+<p>
+<%= link_to "Add to My collection", hanger_path(shirt_id: @shirt), method: :post %>
 </p>

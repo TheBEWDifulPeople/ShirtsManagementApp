@@ -8,6 +8,7 @@
 <% end %>
 
 <%= form_for @shirt do |f| %>
+  <fieldset>
 <%= f.label :name %>
 <%= f.text_field :name %>
 <%= f.label :description %>
@@ -16,6 +17,8 @@
 <%= f.text_field :image %>
 <%= f.label :tag_list %>
 <%= f.text_field :tag_list, value:  format_tag_list(@shirt.tag_list) %>
-<%= f.collection_select :vendor_id, @vendors, :id, :name %>
-<%= f.submit %>
+<%= f.label :vendor_id, "Select a vendor" %>
+<%= f.collection_select :vendor_id, @vendors, :id, :name %></br>
+<%= f.submit class: 'btn'%>
+  </fieldset>
 <% end %>

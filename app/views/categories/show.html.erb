@@ -1,5 +1,8 @@
+<h1>Category</h1>
+<h2><%= @category.name %></h2>
+<p>All shirts in this category:</p>
 <section class="row">
-  <% @shirts.each do |shirt| %>
+  <% @category.shirts.each do |shirt| %>
     <article class="span3">
       <header><%= shirt.name %></header>
       <p><%= truncate shirt.description, separator: " " %></p>
