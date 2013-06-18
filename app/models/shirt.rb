@@ -1,13 +1,13 @@
 class Shirt < ActiveRecord::Base
   validates :name, :description, :image, presence: true
   validates :description, length: { minimum: 10 }
-  validates :image, format: { with: /\A\w+.png\z/ }
   has_many :tags
   has_many :categories, through: :tags
   belongs_to :vendor
 
   has_many :closets
   has_many :users, through: :closets
+  mount_uploader :image, ImageUploader
 
   def self.search_for(query)
     where('name LIKE ? OR description LIKE ?', "%#{query}%", "%#{query}%")
